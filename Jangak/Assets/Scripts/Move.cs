@@ -33,11 +33,4 @@ public class Move : MonoBehaviour
         movement = new Vector3(x, y, 0f);
         transform.position += movement * speed * Time.deltaTime;
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("TerrainBoundary"))
-        {
-            CameraManager.CameraPosition(other.transform.position);
-        }
-    }
 }

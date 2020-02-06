@@ -22,24 +22,11 @@ public class Ammo : MonoBehaviour
     private void OnEnable()
     {
         //disabling the ammo after a period of time
-        StartCoroutine(Die());
+        Invoke("Die", lifeTime);
     }
     //for disablig the ammo after hitting or going far
-    private IEnumerator Die()
+    private void Die()
     {
-        yield return new WaitForSeconds(lifeTime);
         gameObject.SetActive(false);
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.CompareTag("TerrainBoundary"))
-            gameObject.SetActive(false);
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("TerrainBoundary"))
-        {
-            gameObject.SetActive(false);
-        }
     }
 }
