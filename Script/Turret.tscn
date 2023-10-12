@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvfovybn7nuha"]
+
+[ext_resource type="Texture2D" uid="uid://bejq15v6bi7tc" path="res://Assets/BourrasqueChassis.png" id="1_fhqs4"]
+[ext_resource type="Script" path="res://Script/Chassis.gd" id="1_olkjt"]
+[ext_resource type="Texture2D" uid="uid://bjqe6hihhrw31" path="res://Assets/BourrasqueTurret.png" id="3_argiw"]
+[ext_resource type="Script" path="res://Script/Turret.gd" id="3_nf06t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0v6if"]
+radius = 29.0
+height = 94.0
+
+[node name="Player" type="Node2D"]
+
+[node name="Chassis" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+script = ExtResource("1_olkjt")
+
+[node name="Chassis" type="CollisionPolygon2D" parent="Chassis"]
+polygon = PackedVector2Array(-38, -88, -23, -88, -23, -80, 22, -80, 22, -89, 38, -89, 38, 71, 22, 71, 22, 66, -22, 66, -22, 71, -38, 71)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chassis/Chassis"]
+position = Vector2(0, -9)
+texture = ExtResource("1_fhqs4")
+
+[node name="Turret" type="CharacterBody2D" parent="Chassis"]
+script = ExtResource("3_nf06t")
+
+[node name="Chassis2" type="CollisionShape2D" parent="Chassis/Turret"]
+shape = SubResource("CapsuleShape2D_0v6if")
+
+[node name="Sprite2D" type="Sprite2D" parent="Chassis/Turret"]
+position = Vector2(0, -60.78)
+texture = ExtResource("3_argiw")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../Chassis")
+node_b = NodePath("../Chassis/Turret")
+
+[node name="Camera2D" type="Camera2D" parent="."]
