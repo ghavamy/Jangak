@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bejq15v6bi7tc"
-path="res://.godot/imported/BourrasqueChassis.png-4202b58665631ba2d49416c6167ef0f8.ctex"
+uid="uid://bab14n6jnd3l8"
+path="res://.godot/imported/bullet1.png-c0e3678402484b31ca639c49d102dee0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BourrasqueChassis.png"
-dest_files=["res://.godot/imported/BourrasqueChassis.png-4202b58665631ba2d49416c6167ef0f8.ctex"]
+source_file="res://Assets/png/bullet1.png"
+dest_files=["res://.godot/imported/bullet1.png-c0e3678402484b31ca639c49d102dee0.ctex"]
 
 [params]
 

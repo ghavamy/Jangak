@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn541sltewtuh"
-path="res://.godot/imported/Bourrasque2.png-8d8d0f20f7924b91878964961fa2b498.ctex"
+uid="uid://bsuplfx7jmxyh"
+path="res://.godot/imported/face.png-ec5787cba00b3fd77d7f628c33525af8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bourrasque2.png"
-dest_files=["res://.godot/imported/Bourrasque2.png-8d8d0f20f7924b91878964961fa2b498.ctex"]
+source_file="res://Assets/png/face.png"
+dest_files=["res://.godot/imported/face.png-ec5787cba00b3fd77d7f628c33525af8.ctex"]
 
 [params]
 

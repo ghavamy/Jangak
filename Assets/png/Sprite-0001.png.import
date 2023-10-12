@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjqe6hihhrw31"
-path="res://.godot/imported/BourrasqueTurret.png-4c29bef130723accb39a1973beffac1d.ctex"
+uid="uid://ck484tvbihsj2"
+path="res://.godot/imported/Sprite-0001.png-f1413b5c7e19c6f598ae7c028844becc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BourrasqueTurret.png"
-dest_files=["res://.godot/imported/BourrasqueTurret.png-4c29bef130723accb39a1973beffac1d.ctex"]
+source_file="res://Assets/png/Sprite-0001.png"
+dest_files=["res://.godot/imported/Sprite-0001.png-f1413b5c7e19c6f598ae7c028844becc.ctex"]
 
 [params]
 

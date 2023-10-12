@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vw6rormkg4nn"
-path="res://.godot/imported/Bourrasque1.png-e3b1117cd2cfc4c8710a051e4f29f964.ctex"
+uid="uid://cpadunhtpfk50"
+path="res://.godot/imported/gun1.png-c9395f33352c3fc0ccac3fddcb87e12c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bourrasque1.png"
-dest_files=["res://.godot/imported/Bourrasque1.png-e3b1117cd2cfc4c8710a051e4f29f964.ctex"]
+source_file="res://Assets/png/gun1.png"
+dest_files=["res://.godot/imported/gun1.png-c9395f33352c3fc0ccac3fddcb87e12c.ctex"]
 
 [params]
 
