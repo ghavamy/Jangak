@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bab14n6jnd3l8" path="res://Assets/png/bullet1.png" id="1_qb02g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qy0al"]
-radius = 2.0
-height = 7.99356
+radius = 6.99436
+height = 28.0577
 
 [node name="Laser" type="Area2D"]
 script = ExtResource("1_004bs")
@@ -18,3 +18,5 @@ texture = ExtResource("1_qb02g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.61094
 shape = SubResource("CapsuleShape2D_qy0al")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

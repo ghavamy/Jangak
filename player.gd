@@ -3,29 +3,34 @@ var movespeed = 30000
 var can_laser: bool = true
 var can_grenade: bool = true
 var flip = false
+var hitpoint = 100
+
 
 signal laser
 signal grenade
 
+func _ready():
+	$Marker2D/ProgressBar.set_value_no_signal(100)
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	var direction = Input.get_vector("left", "right" ,"up" ,"down")
 	velocity = direction * movespeed * delta
 	move_and_slide()
 	look_at(get_global_mouse_position())
 	flipping($Sprite2D)
-		
+
 
 		
 	
 	if Input.is_action_pressed("primary") and can_laser:
-		print("prim")
+#		print("prim")
 		can_laser = false
 		$Reloadprim.start()
 		laser.emit()
 	
 	if Input.is_action_pressed("secondary") and can_grenade:
-		print("sec")
+#		print("sec")
 		can_grenade = false
 		$Reloadsec.start()
 		grenade.emit()
@@ -42,5 +47,20 @@ func flipping(body):
 		body.flip_v = true
 	else:
 		body.flip_v = false
+		
+
 	
+
+
+
+
+
+func _on_player_area_body_entered(body):
+	print(hitpoint)
+	hitpoint -=10
+	if hitpoint<=0:
+		get_tree().reload_current_scene()
+	if "hit" in body:
+		body.hit()
+	$Marker2D/ProgressBar.set_value_no_signal(hitpoint)
 
