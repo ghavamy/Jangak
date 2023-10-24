@@ -21,20 +21,19 @@ func init():
 	for i in range(size):
 		var s = scene.instantiate()
 		s.set_name(prefix + "_" + str(i))
-		s.connect("killed", self , "on_killed")
 		dead.push_back(s)
 
 func get_first_dead():
 	var ds = dead.size()
 	if ds > 0:
 		var o = dead[ds - 1]
-		if !o.dead: return null
+#		if !o.dead: return null
 
 		var n = o.get_name()
 		alive[n] = o
 		dead.pop_back()
-		o.dead = false
-		o.set_pause_mode(0)
+#		o.dead = false
+#		o.set_pause_mode(0)
 		return o
 
 	return null
@@ -56,14 +55,14 @@ func add_to_node(node):
 	for i in dead:
 		node.add_child(i)
 
-func show():
+func _show():
 	for i in alive.values():
 		i.show()
 
 	for i in dead:
 		i.show()
 
-func hide():
+func _hide():
 	for i in alive.values():
 		i.hide()
 
@@ -80,6 +79,10 @@ func _on_killed(target):
 	# Add the killed object to the dead pool, now available for use
 	dead.push_back(target)
 
-	target.set_pause_mode(1)
+#	target.set_pause_mode(1)
+	print(target)
 
 	emit_signal("killed", target)
+
+#func debugfuc():
+#	print("ok")

@@ -13,7 +13,6 @@ func _process(delta):
 	velocity = direction.normalized() * speed * delta
 	move_and_slide()
 func hit():
-	print("aaa")
 	queue_free()
 	
 

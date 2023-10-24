@@ -1,7 +1,7 @@
 extends CharacterBody2D
 var movespeed = 30000
-var can_laser: bool = true
-var can_grenade: bool = true
+var can_laser = true
+var can_grenade = true
 var flip = false
 var hitpoint = 100
 
@@ -20,9 +20,6 @@ func _physics_process(delta):
 	look_at(get_global_mouse_position())
 	flipping($Sprite2D)
 
-
-		
-	
 	if Input.is_action_pressed("primary") and can_laser:
 #		print("prim")
 		can_laser = false
@@ -48,12 +45,6 @@ func flipping(body):
 	else:
 		body.flip_v = false
 		
-
-	
-
-
-
-
 
 func _on_player_area_body_entered(body):
 	print(hitpoint)

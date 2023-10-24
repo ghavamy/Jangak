@@ -15,6 +15,10 @@ run/main_scene="res://main_t.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Poolmanager="*res://poolmanager.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
