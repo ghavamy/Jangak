@@ -83,6 +83,3 @@ func _on_killed(target):
 	print(target)
 
 	emit_signal("killed", target)
-
-#func debugfuc():
-#	print("ok")

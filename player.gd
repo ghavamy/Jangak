@@ -2,7 +2,7 @@ extends CharacterBody2D
 var movespeed = 30000
 var can_laser = true
 var can_grenade = true
-var flip = false
+
 var hitpoint = 100
 
 
@@ -11,7 +11,6 @@ signal grenade
 
 func _ready():
 	$Marker2D/ProgressBar.set_value_no_signal(100)
-	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	var direction = Input.get_vector("left", "right" ,"up" ,"down")
@@ -40,7 +39,7 @@ func _on_reloadsec_timeout():
 	can_grenade = true
 	
 func flipping(body):
-	if (body.global_rotation < deg_to_rad(-90) and body.global_rotation > deg_to_rad(-180)) or (body.global_rotation > deg_to_rad(90) and $Sprite2D.global_rotation < deg_to_rad(180) and !flip):
+	if (body.global_rotation < deg_to_rad(-90) and body.global_rotation > deg_to_rad(-180)) or (body.global_rotation > deg_to_rad(90) and $Sprite2D.global_rotation < deg_to_rad(180)):
 		body.flip_v = true
 	else:
 		body.flip_v = false
