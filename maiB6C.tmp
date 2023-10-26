@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgsx4x6lt3p2p"]
+
+[ext_resource type="Script" path="res://main_t.gd" id="1_nklq3"]
+[ext_resource type="PackedScene" uid="uid://0kgw8f4cd624" path="res://player.tscn" id="1_otbm6"]
+[ext_resource type="PackedScene" uid="uid://cs27wwlfavkf3" path="res://gun_1.tscn" id="3_kj6vi"]
+[ext_resource type="PackedScene" uid="uid://b0gbdep8viuc6" path="res://enemy_ai.tscn" id="4_2m1sy"]
+
+[node name="MainT" type="Node2D"]
+script = ExtResource("1_nklq3")
+
+[node name="projectiles" type="Node2D" parent="."]
+
+[node name="player" parent="." instance=ExtResource("1_otbm6")]
+position = Vector2(465, 278)
+
+[node name="Gun1" parent="player" instance=ExtResource("3_kj6vi")]
+z_index = -1
+position = Vector2(39, 0)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1345, 336)
+
+[node name="Timer" type="Timer" parent="Marker2D"]
+autostart = true
+
+[node name="EnemyAI" parent="." instance=ExtResource("4_2m1sy")]
+position = Vector2(1058, 551)
+
+[connection signal="grenade" from="player" to="." method="_on_player_grenade"]
+[connection signal="laser" from="player" to="." method="_on_player_laser"]
+[connection signal="timeout" from="Marker2D/Timer" to="." method="_on_timer_timeout"]

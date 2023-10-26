@@ -20,6 +20,7 @@ func _on_body_entered(body):
 func recycle():
 	Manager.bullets_pool._on_killed(self)
 	set_collision_mask_value(1,false)
+	self.hide()
 	$Timer.stop()
 
 

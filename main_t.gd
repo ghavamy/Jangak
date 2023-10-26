@@ -13,6 +13,7 @@ func _ready():
 	
 func _on_player_laser():
 	var laser = Manager.bullets_pool.get_first_dead()
+	laser.show()
 	laser.position = $player/Gun1.pos
 	laser.direction = (get_global_mouse_position() - $player.global_position).normalized()
 	laser.set_collision_mask_value(1,true)

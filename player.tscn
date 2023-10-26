@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://0kgw8f4cd624"]
+[gd_scene load_steps=6 format=3 uid="uid://0kgw8f4cd624"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_n46pj"]
 [ext_resource type="Texture2D" uid="uid://bsuplfx7jmxyh" path="res://Assets/png/face.png" id="2_8d4o4"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kkgkw"]
-radius = 30.0167
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7tce1"]
 radius = 35.1283
@@ -30,10 +27,6 @@ one_shot = true
 [node name="Reloadsec" type="Timer" parent="."]
 one_shot = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-z_index = 1
-shape = SubResource("CircleShape2D_kkgkw")
-
 [node name="playerArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerArea"]
@@ -49,6 +42,11 @@ offset_bottom = -42.795
 theme_override_font_sizes/font_size = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_bw54m")
 theme_override_styles/fill = SubResource("StyleBoxFlat_45ffv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
 
 [connection signal="timeout" from="Reloadprim" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Reloadsec" to="." method="_on_reloadsec_timeout"]

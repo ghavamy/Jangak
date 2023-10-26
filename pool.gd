@@ -54,6 +54,8 @@ func add_to_node(node):
 
 	for i in dead:
 		node.add_child(i)
+	
+	_hide()
 
 func _show():
 	for i in alive.values():
