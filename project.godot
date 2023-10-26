@@ -21,6 +21,9 @@ Manager="*res://manager.tscn"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=649
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [input]
