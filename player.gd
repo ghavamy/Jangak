@@ -17,7 +17,7 @@ func _physics_process(delta):
 	velocity = direction * movespeed * delta
 	move_and_slide()
 	look_at(get_global_mouse_position())
-	flipping($Sprite2D)
+	Manager.flipping($Sprite2D)
 
 	if Input.is_action_pressed("primary") and can_laser:
 #		print("prim")
@@ -37,12 +37,6 @@ func _on_timer_timeout():
 
 func _on_reloadsec_timeout():
 	can_grenade = true
-	
-func flipping(body):
-	if (body.global_rotation < deg_to_rad(-90) and body.global_rotation > deg_to_rad(-180)) or (body.global_rotation > deg_to_rad(90) and $Sprite2D.global_rotation < deg_to_rad(180)):
-		body.flip_v = true
-	else:
-		body.flip_v = false
 		
 
 func _on_player_area_body_entered(body):

@@ -13,7 +13,6 @@ bg_color = Color(0.866667, 0.0313726, 0.223529, 1)
 bg_color = Color(0.270588, 0.694118, 0.458824, 1)
 
 [node name="player" type="CharacterBody2D"]
-collision_layer = 0
 script = ExtResource("1_n46pj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
