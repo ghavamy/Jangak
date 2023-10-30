@@ -11,6 +11,9 @@ func _ready():
 	Manager.bullets_pool.add_to_node(bullets)
 	set_process_input(true)
 	
+func _process(delta):
+	$CanvasLayer/Score.text = str(Manager.score)
+	
 func _on_player_laser():
 	var laser = Manager.bullets_pool.get_first_dead()
 	laser.show()
@@ -35,3 +38,4 @@ func spawn_Enemies(pos):
 
 func _on_timer_timeout():
 	spawn_Enemies($Marker2D.position)
+

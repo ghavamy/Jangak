@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_l6rcy"]
 radius = 30.1496
 
-[node name="EnemyAI" type="CharacterBody2D"]
+[node name="EnemyAI" type="CharacterBody2D" groups=["Hitable"]]
 safe_margin = 0.001
 script = ExtResource("1_u1ovs")
 

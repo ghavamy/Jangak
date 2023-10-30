@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 var movespeed = 30000
 var can_laser = true
 var can_grenade = true
@@ -18,6 +19,12 @@ func _physics_process(delta):
 	move_and_slide()
 	look_at(get_global_mouse_position())
 	Manager.flipping($Sprite2D)
+	
+	#for progess bar
+	if($Sprite2D.flip_v):
+		$Marker2D.rotation = PI
+	else:
+		$Marker2D.rotation = 0
 
 	if Input.is_action_pressed("primary") and can_laser:
 #		print("prim")
@@ -40,11 +47,10 @@ func _on_reloadsec_timeout():
 		
 
 func _on_player_area_body_entered(body):
-	print(hitpoint)
-	hitpoint -=10
-	if hitpoint<=0:
-		get_tree().reload_current_scene()
 	if "hit" in body:
 		body.hit()
-	$Marker2D/ProgressBar.set_value_no_signal(hitpoint)
-
+		print(hitpoint)
+		hitpoint -=10
+		$Marker2D/ProgressBar.set_value_no_signal(hitpoint)
+	if hitpoint<=0:
+		get_tree().reload_current_scene()

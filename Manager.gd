@@ -4,6 +4,8 @@ var poolscript = preload("res://pool.gd")
 
 var bullets_pool
 
+var score = 0
+
 # for bullet pool
 const bullet = preload("res://laser.tscn")
 const BULLET_POOL_SIZE = 20
@@ -16,7 +18,7 @@ func _ready():
 	
 	
 func flipping(body):
-	if (body.global_rotation < deg_to_rad(-90) and body.global_rotation > deg_to_rad(-180)) or (body.global_rotation > deg_to_rad(90) and body.global_rotation < deg_to_rad(180)):
+	if (body.global_rotation < PI* (-1)/2 and body.global_rotation > PI * (-1)) or (body.global_rotation > PI/2 and body.global_rotation < PI):
 		body.flip_v = true
 	else:
 		body.flip_v = false

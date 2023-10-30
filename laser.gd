@@ -15,6 +15,7 @@ func _on_body_entered(body):
 	if "hit" in body:
 		body.hit()
 		recycle()
+		Manager.score += 10
 
 
 func recycle():

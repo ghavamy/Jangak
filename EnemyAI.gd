@@ -14,7 +14,3 @@ func _process(delta):
 	move_and_slide()
 func hit():
 	queue_free()
-	
-
-
-
