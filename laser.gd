@@ -1,8 +1,9 @@
 extends Area2D
 
-var direction: Vector2
+signal score_changed(new_score)
 
-@onready var speed = 1500
+var direction: Vector2
+var speed = 1500
 
 func _ready():
 	look_at(get_global_mouse_position())
@@ -15,7 +16,8 @@ func _on_body_entered(body):
 	if "hit" in body:
 		body.hit()
 		recycle()
-		Manager.score += 10
+		Manager.increase_score(10)
+		emit_signal("score_changed",Manager.score)
 
 
 func recycle():

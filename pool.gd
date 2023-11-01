@@ -82,6 +82,5 @@ func _on_killed(target):
 	dead.push_back(target)
 
 #	target.set_pause_mode(1)
-	print(target)
 
 	emit_signal("killed", target)

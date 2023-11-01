@@ -49,7 +49,6 @@ func _on_reloadsec_timeout():
 func _on_player_area_body_entered(body):
 	if "hit" in body:
 		body.hit()
-		print(hitpoint)
 		hitpoint -=10
 		$Marker2D/ProgressBar.set_value_no_signal(hitpoint)
 	if hitpoint<=0:
